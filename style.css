@@ -16,7 +16,7 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 20px;
-  background-color: #111;
+  background-color: white;
   position: sticky;
   top: 0;
 }
@@ -35,12 +35,12 @@ nav ul {
 
 nav a {
   text-decoration: none;
-  color: #FFD700;
+  color: black;
   transition: color 0.3s;
 }
 
 nav a:hover {
-  color: #aaa;
+  color: #555;
 }
 
 .hero {
