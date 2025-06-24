@@ -21,6 +21,8 @@
   </header>
 
   <section class="hero" id="hero">
+    <div class="hero-bg" id="hero-bg-1"></div>
+    <div class="hero-bg" id="hero-bg-2"></div>
     <div class="hero-text">
       <h1>Bem-vindo à Classe Garage</h1>
       <p>...</p>
@@ -31,7 +33,7 @@
     <p>&copy; 2025 Classe Garage. Todos os direitos reservados.</p>
   </footer>
 
-  <!-- Script para trocar as imagens -->
+  <!-- Script para fade automático das imagens -->
   <script>
     const imagens = [
       "images/hero.jpg",
@@ -42,15 +44,33 @@
     ];
 
     let indexAtual = 0;
-    const heroSection = document.getElementById("hero");
+    let ativo = 0;
 
-    // Definir imagem inicial
-    heroSection.style.backgroundImage = `url('${imagens[0]}')`;
+    const bg1 = document.getElementById("hero-bg-1");
+    const bg2 = document.getElementById("hero-bg-2");
+
+    // Imagem inicial
+    bg1.style.backgroundImage = `url('${imagens[0]}')`;
+    bg1.classList.add("active");
 
     setInterval(() => {
-      indexAtual = (indexAtual + 1) % imagens.length;
-      heroSection.style.backgroundImage = `url('${imagens[indexAtual]}')`;
-    }, 3000);
+      const proximoIndex = (indexAtual + 1) % imagens.length;
+      const proximaImagem = imagens[proximoIndex];
+
+      if (ativo === 0) {
+        bg2.style.backgroundImage = `url('${proximaImagem}')`;
+        bg2.classList.add("active");
+        bg1.classList.remove("active");
+        ativo = 1;
+      } else {
+        bg1.style.backgroundImage = `url('${proximaImagem}')`;
+        bg1.classList.add("active");
+        bg2.classList.remove("active");
+        ativo = 0;
+      }
+
+      indexAtual = proximoIndex;
+    }, 5000); // troca a cada 5 segundos
   </script>
 </body>
 </html>
