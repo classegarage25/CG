@@ -6,6 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>CG – Classe Garage</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    .hero {
+      height: 100vh;
+      background-size: cover;
+      background-position: center;
+      transition: background-image 1s ease-in-out;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -20,7 +28,7 @@
     </nav>
   </header>
 
-  <section class="hero">
+  <section class="hero" id="hero">
     <div class="hero-text">
       <h1>Bem-vindo à Classe Garage</h1>
       <p>...</p>
@@ -30,5 +38,27 @@
   <footer>
     <p>&copy; 2025 Classe Garage. Todos os direitos reservados.</p>
   </footer>
+
+  
+  <script>
+    const imagens = [
+      "images/hero.jpg",
+      "images/hero2.jpg",
+      "images/hero3.jpg",
+      "images/hero4.jpg",
+      "images/hero5.jpg"
+    ];
+
+    let indexAtual = 0;
+    const heroSection = document.getElementById("hero");
+
+    
+    heroSection.style.backgroundImage = `url('${imagens[0]}')`;
+
+    setInterval(() => {
+      indexAtual = (indexAtual + 1) % imagens.length;
+      heroSection.style.backgroundImage = `url('${imagens[indexAtual]}')`;
+    }, 3000);
+  </script>
 </body>
 </html>
