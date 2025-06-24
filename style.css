@@ -45,16 +45,20 @@ nav a:hover {
 
 .hero {
   height: 80vh;
-  background: url('images/hero.jpg') center center / cover no-repeat;
+  /* Removido o background fixo */
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
 
-  max-width: 1200px;       
-  margin: 0 auto;          
-  border-radius: 10px;     
-  overflow: hidden;        
+  max-width: 1200px;
+  margin: 0 auto;
+  border-radius: 10px;
+  overflow: hidden;
+
+  background-size: cover;
+  background-position: center;
+  transition: background-image 1s ease-in-out;
 }
 
 .hero-text h1 {
