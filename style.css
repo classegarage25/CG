@@ -97,3 +97,36 @@ footer {
   color: black;
   font-size: 0.9em;
 }
+
+/* --- Estilo para página session --- */
+.session-page {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.session-title {
+  font-size: 2.5em;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.session-content {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+/* Imagem do carro menor */
+.car-image {
+  width: 220px;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Texto ao lado da imagem */
+.car-name {
+  font-size: 1.8em;
+  font-weight: bold;
+}
